@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="View-Invariant Policy Learning via Zero-Shot Novel View Synthesis">
+  <meta name="keywords" content="generalization, visual imitation learning, view synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>View-Invariant Policy Learning via Zero-Shot Novel View Synthesis</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 is-size-2 publication-title">View-Invariant Policy Learning <br /> via Zero-Shot Novel View Synthesis</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+				Anonymous Authors
+			</span>
+          </div>
+		  <br>
+		  <h2 class="subtitle has-text-centered">
+			To supplement our submission, on this page we provide visualizations of augmented dataset trajectories, policy rollouts from novel test viewpoints in real and simulated environments, comparisons between view synthesis methods, and a brief overview of our work.
+     	  </h2>
+		  <div class="is-size-5 publication-authors">
+    	  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+			<center><img width="400" src="./resources/teaser.png"/></center>
+      <h2 class="subtitle has-text-centered">
+	  	We aim to learn policies that generalize to novel viewpoints from widely available, <br /> offline single-view RGB robotic trajectory data.
+      </h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+  	<div class="hero-body box">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+					<p>
+						Large-scale visuomotor policy learning is a promising approach toward developing generalizable manipulation systems. Yet, policies that can be deployed on diverse embodiments, environments, and observational modalities remain elusive. In this work, we investigate how knowledge from large-scale visual data of the world may be used to address one axis of variation for generalizable manipulation: observational viewpoint. Specifically, we study single-image novel view synthesis models, which learn 3D-aware scene-level priors by rendering images of the same scene from alternate camera viewpoints given a single input image. For practical application to diverse robotic data, these models must operate <i>zero-shot</i>, performing view synthesis on unseen tasks and environments. We empirically analyze view synthesis models within a simple data-augmentation scheme to understand their capabilities for learning viewpoint-invariant policies from single-viewpoint demonstration data. Upon evaluating the robustness of policies trained with our method to out-of-distribution camera viewpoints, we find that they outperform baselines in both simulated and real-world manipulation tasks. 
+					</p>
+					 
+
+        </div>
+      </div>
+	  </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+
+<section class="section">
+	<div class="">
+	<div class="container is-max-desktop">
+		<h2 class="title is-3" style="text-align:center">Learning View-Invariance</h2>
+		<br>
+		<img src="./resources/fig_method.png"/>
+		<br>
+		<br>
+		<h2 class="subtitle has-text-centered">
+			Depiction of the data augmentation scheme that we study. Observations are replaced with viewpoint-augmented versions of the same scene with action labels held constant.
+    	</h2>
+	</div>
+</div>
+
+</section>
+
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+		<center><h2 class="title is-3">Example Augmented Dataset Trajectories</h2></center>
+		<br>
+		<h2 class="subtitle has-text-centered">
+			Below, we show examples of expert demonstration trajectories augmented by various novel view synthesis models. For ZeroNVS (finetuned), the model is finetuned on synthetic data from MimicGen tasks for simulated environments and on the DROID dataset for the real setting, qualitatively improving the fidelity of generated images and quantitatively improving downstream policy performance.<br />Please see the manuscript and appendix for more details about finetuning.
+    	</h2>
+		<div class="columns">
+			<div class="column is-one-fifth">
+				<h2 class="subtitle has-text-centered">
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 170px; display: flex; align-items: center; justify-content: center;">
+					Coffee	
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 170px; display: flex; align-items: center; justify-content: center;">
+					Stack	
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 170px; display: flex; align-items: center; justify-content: center;">
+					Threading	
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 170px; display: flex; align-items: center; justify-content: center;">
+					Hammer	
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 170px; display: flex; align-items: center; justify-content: center;">
+					Cup on saucer (real)
+				</h2>
+			</div>
+			<div class="column is-one-fifth">
+				<h2 class="subtitle has-text-centered">
+					<br />
+					Single original view
+				</h2>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/coffee_orig_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/stack_orig_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/threading_orig_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/hammer_orig_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/real_orig_looped.gif"/>
+			</div>
+			<div class="column  is-one-fifth">
+				<h2 class="subtitle has-text-centered">
+					Depth est. + Reproj.	
+				</h2>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/coffee_deproj_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/stack_deproj_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/threading_deproj_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/hammer_deproj_looped.gif"/>
+				<img width=200 height=200 src="./resources/example_aug_trajectories/real_deproj.gif"/>
+			</div>
+			<div class="column  is-one-fifth">
+				<h2 class="subtitle has-text-centered">
+					<br />
+					ZeroNVS 
+				</h2>
+				<img width=200 src="./resources/example_aug_trajectories/coffee_znvs_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/stack_znvs_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/threading_znvs_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/hammer_znvs_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/real_znvs_looped.gif"/>
+			</div>
+			<div class="column  is-one-fifth">
+				<h2 class="subtitle has-text-centered">
+					ZeroNVS (Finetuned)
+				</h2>
+				<img width=200 src="./resources/example_aug_trajectories/coffee_znvs_ft_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/stack_znvs_ft_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/threading_znvs_ft_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/hammer_znvs_ft_looped.gif"/>
+				<img width=200 src="./resources/example_aug_trajectories/real_znvs_ft_looped.gif"/>
+			</div>
+		</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+	<div class="container is-max-desktop">
+		<h2 class="title is-3" style="text-align:center">Qualitative Behavior of<br>Learned Policies on Novel Test Viewpoints</h2>
+		<br>
+		<h2 class="subtitle has-text-centered">
+			Here we show rollouts of policies trained with view synthesis model augmentation when placed in random test viewpoints on the <it>quarter circle arc</it> distribution. We note that even when the policies augmented using the finetuned ZeroNVS model fails, they tend to make more progress on the task compared to single view or depth estimation and reprojection baselines. Critically, note that these policies are all trained using a <b>single-view</b> source demonstration dataset.
+		</h2>
+		<br>
+		<div class="columns">
+			<div class="column is-one-quarter">
+				<h2 class="subtitle has-text-centered">
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 221px; display: flex; align-items: center; justify-content: center;">
+					Hammer	
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 221px; display: flex; align-items: center; justify-content: center;">
+					Coffee	
+				</h2>
+				<h2 class="subtitle has-text-centered" style="height: 221px; display: flex; align-items: center; justify-content: center;">
+					Stack	
+				</h2>
+				
+			</div>
+			<div class="column is-one-quarter">
+				<h2 class="subtitle has-text-centered">
+					Single original view
+				</h2>
+				<img width=256 height=256 src="./resources/rollouts/hammer_orig_opt.gif"/>
+				<img width=256 height=256 src="./resources/rollouts/coffee_orig_opt.gif"/>
+				<img width=256 height=256 src="./resources/rollouts/stack_orig_opt.gif"/>
+			</div>
+			<div class="column  is-one-quarter">
+				<h2 class="subtitle has-text-centered">
+					Depth est. + Reproj.	
+				</h2>
+				<img width=256 height=256 src="./resources/rollouts/hammer_deproj_opt.gif"/>
+				<img width=256 height=256 src="./resources/rollouts/coffee_deproj_opt.gif"/>
+				<img width=256 height=256 src="./resources/rollouts/stack_deproj_opt.gif"/>
+			</div>
+			<div class="column  is-one-quarter">
+				<h2 class="subtitle has-text-centered">
+					ZeroNVS (Finetuned)
+				</h2>
+				<img width=256 height=256 src="./resources/rollouts/hammer_znvs_ft_opt.gif"/>
+				<img width=256 height=256 src="./resources/rollouts/coffee_znvs_ft_opt.gif"/>
+				<img width=256 height=256 src="./resources/rollouts/stack_znvs_ft_opt.gif"/>
+			</div>
+		</div>	
+	</div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+	<h2 class="title is-3" style="text-align:center">Learning & Deploying View-Invariant Policies on Real Robots</h2>
+	<br>
+	<h2 style="margin-left: 15%; margin-right:15%" class="subtitle has-text-centered">
+		Using the ZeroNVS novel view synthesis model, we learn diffusion policies that take as input both third-person and (unaugmented) wrist camera observations to solve a "put cup in saucer" task from multiple novel viewpoints. Here we show successful rollouts from policies trained on datasets augmented by a pretrained ZeroNVS model and a ZeroNVS model finetuned on DROID data. Again, the original training dataset only contains trajectories observed <b>from a single RGB view</b>.<br>We find that performance is further improved by finetuning the ZeroNVS model on the DROID dataset.
+	</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+		<div class="item item-1">
+          <video poster="" id="sofa-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./resources/real_rollouts/ft_wrist_cam3_1_square.mp4"
+                    type="video/mp4">
+					</video>
+        </div>
+        <div class="item item-2">
+          <video poster="" id="sofa-2" autoplay controls muted loop playsinline height="100%">
+            <source src="./resources/real_rollouts/ft_wrist_origcam_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-3">
+          <video poster="" id="sofa-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./resources/real_rollouts/ft_wrist_cam4_1_square.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-sofa-4">
+          <video poster="" id="sofa-4" autoplay controls muted loop playsinline height="100%">
+            <source src="./resources/real_rollouts/zeroshot_wrist_cam5_square.mp4"
+                    type="video/mp4">
+          </video>
+				</div>
+				<div class="item item-cups-1">
+          <video poster="" id="cups-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./resources/real_rollouts/ft_wrist_cam3_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cups-2">
+          <video poster="" id="cups-2" autoplay controls muted loop playsinline height="100%">
+			<source src="./resources/real_rollouts/ft_wrist_origcam_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cups-3">
+          <video poster="" id="cups-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./resources/real_rollouts/zeroshot_wrist_cam3_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cups-4">
+          <video poster="" id="cups-4" autoplay controls muted loop playsinline height="100%">
+            <source src="./resources/real_rollouts/zeroshot_wrist_cam4_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</section>
+
+<section class="section">
+	<div class="container is-max-desktop">
+		<h2 class="subtitle has-text-centered">
+			In contrast, a baseline model trained on the single original view and wrist observations is heavily overfitted to the original view, and often fails to reach toward the cup when tested on novel views:
+		</h2>
+		<div class="columns is-centered has-text-centered">
+			<div class="column is-one-third">
+				<h2 class="subtitle has-text-centered">
+					Original view	
+				</h2>
+				<video poster="" id="cups-4" autoplay controls muted loop playsinline height="100%">
+					<source src="./resources/real_rollouts/bl_wrist_camorig.mov"
+						type="video/mp4">
+				</video>
+			</div>
+			<div class="column is-one-third">
+				<h2 class="subtitle has-text-centered">
+					Novel view 
+				</h2>
+				<video poster="" id="cups-4" autoplay controls muted loop playsinline height="100%">
+					<source src="./resources/real_rollouts/bl_wrist_1.mp4"
+						type="video/mp4">
+				</video>
+			</div>
+			<div class="column is-one-third">
+				<h2 class="subtitle has-text-centered">
+					Novel view 
+				</h2>
+				<video poster="" id="cups-4" autoplay controls muted loop playsinline height="100%">
+					<source src="./resources/real_rollouts/bl_wrist_2.mov"
+						type="video/mp4">
+				</video>
+			</div>
+		</div>
+	<div class="container is-max-desktop">
+		<h2 class="subtitle has-text-centered">
+			Additionally, we find that policies that are trained on only wrist observations can have difficulty localizing the correct object to grasp (in this case the cup). Note that here the third-person view is only for visualization purposes and is not provided to the policy:
+		</h2>
+		<br>
+		<div class="columns is-centered has-text-centered">
+			<div class="column is-one-half">
+				<video poster="" id="cups-4" autoplay controls muted loop playsinline height="100%">
+					<source src="./resources/real_rollouts/wristonly_2.mp4"
+						type="video/mp4">
+				</video>
+			</div>
+			<div class="column is-one-half">
+				<video poster="" id="cups-4" autoplay controls muted loop playsinline height="100%">
+					<source src="./resources/real_rollouts/wristonly_1.mp4"
+						type="video/mp4">
+				</video>
+			</div>
+		</div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+					Website template borrowed from <a
+					href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
